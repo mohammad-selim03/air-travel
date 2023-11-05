@@ -1,18 +1,23 @@
-import { FacebookAuthProvider, GoogleAuthProvider, updateProfile } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { context } from '../../AuthContext/AuthContext';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     
     const [error, setError] = useState('');
 
 
-    const {googleSignIn, setUser, loader, setLoader, updateUser, facebookSignIn, emailPasswordSingUp} = useContext(context);
+    const {googleSignIn, setUser, loader, updateUser, facebookSignIn, emailPasswordSingUp} = useContext(context);
 
-
+    const navigate = useNavigate();
+    const location = useLocation();
    
+
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleGoogleSignIn = () => {
         const provider = new GoogleAuthProvider();
@@ -21,6 +26,8 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             setUser(user);
+            toast.success('User Created Successful.!');
+            navigate(from, {replace: true});
             
         })
         .catch(error => console.error(error));
@@ -34,6 +41,8 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             setUser(user);
+            toast.success('User Created Successful.!');
+            navigate(from, {replace: true});
         })
         .catch(error => console.error(error));
     }
@@ -52,10 +61,14 @@ const Login = () => {
             const user = result.user;
             setUser(user);
             console.log(user);
+            toast.success('User Created Successful.!');
+            navigate(from, {replace: true});
+
             
             // update user name
             const userName = {
-                displayName: name
+                displayName: name,
+                email: email
             }
 
             updateUser(userName)

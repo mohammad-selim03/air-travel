@@ -9,6 +9,9 @@ import About from '../About/About';
 import Blog from '../Blog/Blog';
 import Services from '../Services/Services';
 import Contact from '../Contact/Contact';
+import Dashboard from '../../Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './PrivateRoute';
+import UserInfo from '../../Dashboard/UserInfo/UserInfo';
 
 
     const router = createBrowserRouter([
@@ -48,6 +51,17 @@ import Contact from '../Contact/Contact';
                     path: '/signup',
                     element: <Signup></Signup>
                 },
+
+            ]
+        }, 
+        {
+            path: '/dashboard',
+            element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+            children: [
+                {
+                    path: '/dashboard/userinfo',
+                    element: <UserInfo></UserInfo>
+                }
 
             ]
         }

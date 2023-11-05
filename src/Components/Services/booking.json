@@ -1,0 +1,48 @@
+[
+    {
+        "name": "Dhaka to Canada",
+        "price": "$3000",
+        "FlyingTime": "7 hours"
+    },
+    {
+        "name": "Dhaka to Denamrk",
+        "price": "$3200",
+        "FlyingTime": "5 hours"
+    },
+    {
+        "name": "Dhaka to Dubai",
+        "price": "$2000",
+        "FlyingTime": "5 hours"
+    },
+    {
+        "name": "Dhaka to Italy",
+        "price": "$2000",
+        "FlyingTime": "7 hours"
+    },
+    {
+        "name": "Dhaka to Japan",
+        "price": "$2500",
+        "FlyingTime": "9 hours"
+    },
+    {
+        "name": "Dhaka to Malaysia",
+        "price": "$1800",
+        "FlyingTime": "6 hours"
+    },
+    {
+        "name": "Dhaka to Norway",
+        "price": "$2500",
+        "FlyingTime": "9 hours"
+    },
+    {
+        "name": "Dhaka to Switzerland",
+        "price": "$3000",
+        "FlyingTime": "8 hours"
+    },
+    {
+        "name": "Dhaka to Turkey",
+        "price": "$2000",
+        "FlyingTime": "7 hours"
+    }
+ 
+]

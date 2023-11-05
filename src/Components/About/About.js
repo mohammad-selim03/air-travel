@@ -15,7 +15,7 @@ const About = () => {
                     <h1 className="text-5xl font-bold">Best Pilots!</h1>
                     <p className="py-6">We have best pilots and officers in the world ranking of air service. We are qualified & of experience in this field. And best air service of the world it's rare and very comfortable.! <br />
                     the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                    <button className="btn btn-primary rounded">explore more</button>
+                    <button className="btn bg-gradient-to-r from-cyan-500 to-blue-900 w-36 font-bold text-white rounded">explore more</button>
                 </div>
             </div>
         </div>

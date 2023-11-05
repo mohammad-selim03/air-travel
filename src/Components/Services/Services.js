@@ -25,7 +25,7 @@ const Services = () => {
                         <h2 className="card-title font-bold">Dhaka To Canada</h2>
                         <p className='font-bold text-orange-700'>Price : $5000</p>
                         <div className="card-actions">
-                            <button className="btn btn-primary rounded-lg mx-5 w-52 font-bold">Booking</button>
+                            <button className="btn bg-gradient-to-r from-cyan-500 to-blue-900 w-36 font-bold text-white rounded-lg mx-5 w-52 font-bold">Booking</button>
                         </div>
                     </div>
                 </div>

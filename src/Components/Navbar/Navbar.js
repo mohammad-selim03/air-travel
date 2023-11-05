@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/planes/aviation_logo-22.png'
 import { Link } from 'react-router-dom';
 import { FaSearch, FaShoppingBag} from "react-icons/fa";
+import { context } from '../../AuthContext/AuthContext';
 
 
 
 const Navbar = () => {
 
-    const {user} = usecon
+    const {user, logout} = useContext(context);
+    console.log(user);
 
     const menuItems = <>
         <li className='font-bold'><Link to='/'>Home</Link></li>
@@ -15,8 +17,15 @@ const Navbar = () => {
         <li className='font-bold'><Link to='/blog'>Blog</Link></li>
         <li className='font-bold'><Link to='/services'>Services</Link></li>
         <li className='font-bold'><Link to='/contact'>Contact</Link></li>
-        <li className='font-bold'><Link to='/login'>Login</Link></li>
-        <li className='font-bold'><Link to='/signup'>SignUp</Link></li>
+        {
+            user?.email && <li className='font-bold'><Link>{user?.displayName}</Link></li>
+        }
+        {
+            user?.email ? <li className='font-bold' onClick={logout}><Link>LogOut</Link></li>
+            :
+            <li className='font-bold'><Link to='/login'>Login</Link></li>
+        }
+        
     </>
 
     return (

@@ -1,16 +1,18 @@
-import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider, updateProfile } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { FaFacebook, FaGoogle, FaInstagram } from 'react-icons/fa';
-import { Form, Link } from 'react-router-dom';
+import { FaFacebook, FaGoogle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { context } from '../../AuthContext/AuthContext';
 
 const Login = () => {
     
-    const [user, setUser] = useState({});
     const [error, setError] = useState('');
 
 
-    const {googleSignIn, facebookSignIn, emailPasswordSingUp} = useContext(context);
+    const {googleSignIn, setUser, loader, setLoader, updateUser, facebookSignIn, emailPasswordSingUp} = useContext(context);
+
+
+   
 
     const handleGoogleSignIn = () => {
         const provider = new GoogleAuthProvider();
@@ -19,6 +21,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             setUser(user);
+            
         })
         .catch(error => console.error(error));
 
@@ -42,12 +45,25 @@ const Login = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(name, email, password);
 
         emailPasswordSingUp(email, password)
         .then(result => {
             const user = result.user;
             setUser(user);
             console.log(user);
+            
+            // update user name
+            const userName = {
+                displayName: name
+            }
+
+            updateUser(userName)
+            .then((res) => {
+                console.log(res.user);
+                
+            })
+            .catch(err => console.log(err));
         })
         
         .catch(error => {
@@ -56,6 +72,9 @@ const Login = () => {
         });
 
     }
+    if(!loader){
+        return <span className="loading loading-infinity loading-lg"></span>
+    };
 
 
     return (

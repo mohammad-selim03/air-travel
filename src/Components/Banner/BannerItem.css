@@ -1,0 +1,31 @@
+.carousel-img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 800px;
+    height: 500px;
+    border-radius: 12px;
+    display: inline-block;
+    background: linear-gradient(to right, rgba(21, 21, 21, 0.845) 30%, rgba(21, 21, 21, 0) 100%);
+}
+
+.widthh {
+    height: 500px;
+    width: 800px;
+}
+
+.imgheight {
+    height: 500px;
+}
+
+.slider-btn a {
+    color: rgb(255, 164, 8);
+    font-size: 1.2rem;
+}
+
+.slider-btn a:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 204, 0);
+    transition: 0.2s ease-in;
+}

@@ -1,0 +1,9 @@
+.login-container{
+    background: linear-gradient(90deg, rgba(36, 31, 31, 0.808), rgba(255, 255, 255, 0)), url('../../assets//planes/4.jpg');
+    height: 700px;
+    width: 1080px;
+    background-size: cover;
+}
+.login-info{
+    margin-left: -500px;
+}

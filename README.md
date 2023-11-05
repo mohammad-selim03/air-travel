@@ -68,3 +68,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# air-travel is a Dynamic Mern Stack web application. Where a user can signIn or register with email and password, googlePopUp singin method, facebook signIn method. The design part will be taken from Tailwind CSS. A user signin or creating an account, he or she can buy tickets form the tickets section. After that users all info display in dashboard, in that case they can pay their ticket prices. Payment System integration will implement with stripe. There also a admin panel where an admin can manage user like make user admin or delete user. Thanks for your time :-) 

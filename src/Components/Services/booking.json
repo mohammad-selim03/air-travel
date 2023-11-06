@@ -2,47 +2,56 @@
     {
         "name": "Dhaka to Canada",
         "price": "$3000",
-        "FlyingTime": "7 hours"
+        "FlyingTime": "7 hours",
+        "image": "https://i.ibb.co/pdjbc5d/canada.jpg"
     },
     {
         "name": "Dhaka to Denamrk",
         "price": "$3200",
-        "FlyingTime": "5 hours"
+        "FlyingTime": "5 hours",
+        "image": "https://i.ibb.co/ZfJBV2n/denmark.jpg"
     },
     {
         "name": "Dhaka to Dubai",
         "price": "$2000",
-        "FlyingTime": "5 hours"
+        "FlyingTime": "5 hours",
+        "image": "https://i.ibb.co/PZh8tY0/dubai.jpg"
     },
     {
         "name": "Dhaka to Italy",
         "price": "$2000",
-        "FlyingTime": "7 hours"
+        "FlyingTime": "7 hours",
+        "image": "https://i.ibb.co/q51rz67/italu.jpg"
     },
     {
         "name": "Dhaka to Japan",
         "price": "$2500",
-        "FlyingTime": "9 hours"
+        "FlyingTime": "9 hours",
+        "image": "https://i.ibb.co/LQzSF8p/japan.jpg"
     },
     {
         "name": "Dhaka to Malaysia",
         "price": "$1800",
-        "FlyingTime": "6 hours"
+        "FlyingTime": "6 hours",
+        "image": "https://i.ibb.co/yNTY0Lx/malaysia.jpg"
     },
     {
         "name": "Dhaka to Norway",
         "price": "$2500",
-        "FlyingTime": "9 hours"
+        "FlyingTime": "9 hours",
+        "image": "https://i.ibb.co/VJGRXZb/norwayy.jpg"
     },
     {
         "name": "Dhaka to Switzerland",
         "price": "$3000",
-        "FlyingTime": "8 hours"
+        "FlyingTime": "8 hours",
+        "image": "https://i.ibb.co/kJ5LJgB/swithzerland.jpg"
     },
     {
         "name": "Dhaka to Turkey",
         "price": "$2000",
-        "FlyingTime": "7 hours"
+        "FlyingTime": "7 hours",
+        "image": "https://i.ibb.co/kqW9jDF/turkey.jpg"
     }
  
 ]

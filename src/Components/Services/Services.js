@@ -14,8 +14,8 @@ const Services = () => {
     return (
         <div className="mt-20 text-center">
                 <p className="text-xl text-red-700 font-bold">Services</p>
-                <h1 className='text-6xl font-bold'>Our Services With Areas</h1>
-            <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-28'>
+                <h1 className='text-6xl font-bold mb-6'>Our Services With Areas</h1>
+            {/* <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-28'>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <img src={p1} alt="Shoes" className="rounded-xl" />
@@ -133,7 +133,10 @@ const Services = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+
+
+            
             <button className="btn btn-warning rounded mt-10 font-bold w-52 text-xl mb-10">Show More</button>
         </div>
     );

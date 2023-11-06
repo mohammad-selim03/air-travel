@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import p1 from '../../assets/places/canada.jpg'
 import p2 from '../../assets/places/denmark.jpg'
 import p3 from '../../assets/places/dubai.jpg'
@@ -11,6 +11,13 @@ import p9 from '../../assets/places/turkey.jpg'
 import { FaStar } from 'react-icons/fa';
 
 const Services = () => {
+
+    const datas = () => {
+                useEffect(() => {
+                
+                } , [])
+            }
+
     return (
         <div className="mt-20 text-center">
                 <p className="text-xl text-red-700 font-bold">Services</p>
@@ -135,8 +142,8 @@ const Services = () => {
                 </div>
             </div> */}
 
-
             
+
             <button className="btn btn-warning rounded mt-10 font-bold w-52 text-xl mb-10">Show More</button>
         </div>
     );

@@ -1,27 +1,32 @@
-import React, { useEffect } from 'react';
-import p1 from '../../assets/places/canada.jpg'
-import p2 from '../../assets/places/denmark.jpg'
-import p3 from '../../assets/places/dubai.jpg'
-import p4 from '../../assets/places/italu.jpg'
-import p5 from '../../assets/places//japan.jpg'
-import p6 from '../../assets/places/malaysia.jpg'
-import p7 from '../../assets/places/norwayy.jpg'
-import p8 from '../../assets/places/swithzerland.jpg'
-import p9 from '../../assets/places/turkey.jpg'
-import { FaStar } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+import Booking from '../Booking/Booking';
 
 const Services = () => {
 
-    const datas = () => {
-                useEffect(() => {
-                
-                } , [])
-            }
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/bookings-info')
+            .then(res => res.json())
+            .then(data => {
+                setServices(data);
+            })
+    }, [])
 
     return (
         <div className="mt-20 text-center">
-                <p className="text-xl text-red-700 font-bold">Services</p>
-                <h1 className='text-6xl font-bold mb-6'>Our Services With Areas</h1>
+            <p className="text-xl text-red-700 font-bold">Services</p>
+            <h1 className='text-6xl font-bold mb-6'>Our Services With Areas</h1>
+            <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-28'>
+            {
+                services && 
+                services.map(service => <Booking
+                    key={service._id}
+                    service={service}
+                ></Booking>)
+            }
+            </div>
+        {/* </div> */}
             {/* <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-28'>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
@@ -141,9 +146,6 @@ const Services = () => {
                     </div>
                 </div>
             </div> */}
-
-            
-
             <button className="btn btn-warning rounded mt-10 font-bold w-52 text-xl mb-10">Show More</button>
         </div>
     );

@@ -12,6 +12,7 @@ import Contact from '../Contact/Contact';
 import Dashboard from '../../Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './PrivateRoute';
 import UserInfo from '../../Dashboard/UserInfo/UserInfo';
+import BookingsDetails from '../../Pages/BookingsDetails/BookingsDetails';
 
 
     const router = createBrowserRouter([
@@ -51,6 +52,11 @@ import UserInfo from '../../Dashboard/UserInfo/UserInfo';
                     path: '/signup',
                     element: <Signup></Signup>
                 },
+                {
+                    path: '/bookings-details',
+                    element: <BookingsDetails></BookingsDetails>,
+                    loader:({params}) => fetch(`http://localhost:5000//bookings/${params.id}`) 
+                },
 
             ]
         }, 
@@ -61,7 +67,8 @@ import UserInfo from '../../Dashboard/UserInfo/UserInfo';
                 {
                     path: '/dashboard/userinfo',
                     element: <UserInfo></UserInfo>
-                }
+                },
+                
 
             ]
         }

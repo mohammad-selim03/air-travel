@@ -8,7 +8,6 @@ import { context } from '../../AuthContext/AuthContext';
 const Navbar = () => {
 
     const { user, logout, setUser } = useContext(context);
-    console.log(user);
 
     const SignOut = () => {
         logout();

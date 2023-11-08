@@ -53,7 +53,7 @@ import BookingsDetails from '../../Pages/BookingsDetails/BookingsDetails';
                     element: <Signup></Signup>
                 },
                 {
-                    path: `/bookings-details/:id`,
+                    path: '/bookings-details/:id',
                     element: <BookingsDetails></BookingsDetails>,
                     loader:({params}) => fetch(`http://localhost:5000/bookings-details/${params.id}`)
                     

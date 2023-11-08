@@ -16,6 +16,8 @@ const BookingsDetails = () => {
 
     const decreaseNumber = () => {
         setCounter((val) => val - 1);
+        setCounter((val) => val - 1);
+        setCounter((val) => val - 1);
     }
 
 

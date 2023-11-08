@@ -17,9 +17,10 @@ const BookingsDetails = () => {
     const decreaseNumber = () => {
         setCounter((val) => val - 1);
         setCounter((val) => val - 1);
-        setCounter((val) => val - 1);
     }
-
+git add .
+git commit -m "none"
+git push
 
     return (
         <div>

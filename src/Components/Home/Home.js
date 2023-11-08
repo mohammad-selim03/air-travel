@@ -9,6 +9,7 @@ import Services from '../Services/Services';
 import Contact from '../Contact/Contact';
 import Team from '../Team/Team';
 import Features from '../Features/Features';
+import CounterUp from '../CounterUp/CounterUp';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
                 <Banner></Banner>
             </div>
             <About></About>
+            <CounterUp></CounterUp>
             <Services></Services>
             <Contact></Contact>
             <Team></Team>

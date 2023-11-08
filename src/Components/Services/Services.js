@@ -26,7 +26,6 @@ const Services = () => {
                 ></Booking>)
             }
             </div>
-            <button className="btn btn-warning rounded mt-10 font-bold w-52 text-xl mb-10">Show More</button>
         </div>
     );
 };

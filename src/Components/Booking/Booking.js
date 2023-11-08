@@ -12,7 +12,6 @@ const Booking = ({ service }) => {
             headers:{
                 
             },
-            // body: JSON.stringify(_id)
         })
         .then(res => res.json())
         .then(data => {

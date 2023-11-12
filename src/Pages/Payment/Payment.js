@@ -39,7 +39,11 @@ const Payment = ({booking}) => {
     }, [booking]);
 
     const handleSubmit = async (event) => {
-        
+        event.preventDefault();
+
+        if (!stripe || !elements) {
+            return
+        }
 
         const card = elements.getElement(CardElement);
         if (card === null) {

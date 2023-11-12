@@ -1,35 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { context } from '../../AuthContext/AuthContext';
+import { useLoaderData } from 'react-router-dom';
 
 const UserInfo = () => {
+    const {user} = useContext(context);
+    const booking = useLoaderData();
+    console.log(booking);
     return (
         <div className="">
             <table className="table">
                 <thead>
                     <tr>
-                        <th></th>
                         <th>Name</th>
-                        <th>Job</th>
+                        <th>Email</th>
                         <th>Favorite Color</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="bg-base-200">
-                        <th>1</th>
-                        <td>Cy Ganderton</td>
+                        <th>{user?.displayName}</th>
+                        <td>{user?.email}</td>
                         <td>Quality Control Specialist</td>
                         <td>Blue</td>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <td>Hart Hagerty</td>
-                        <td>Desktop Support Technician</td>
-                        <td>Purple</td>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td>Brice Swyre</td>
-                        <td>Tax Accountant</td>
-                        <td>Red</td>
                     </tr>
                 </tbody>
             </table>

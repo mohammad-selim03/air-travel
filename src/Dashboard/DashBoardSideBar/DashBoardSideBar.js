@@ -16,7 +16,6 @@ const DashBoardSideBar = () => {
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                         <li><Link to='/dashboard/userinfo'>My Bookings</Link></li>
-                        <li><Link>Sidebar Item 2</Link></li>
                     </ul>
 
                 </div>

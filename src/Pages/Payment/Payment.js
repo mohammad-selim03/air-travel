@@ -45,8 +45,7 @@ const Payment = ({booking}) => {
         if (card === null) {
             return;
         }
-git add .
-git commit
+
         const { error } = await stripe.createPaymentMethod({
             type: 'card',
             card

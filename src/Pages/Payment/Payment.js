@@ -46,8 +46,7 @@ const Payment = ({booking}) => {
             return;
         }
 git add .
-git commit -m "none"
-git push
+git commit -m "sms"
         const { error } = await stripe.createPaymentMethod({
             type: 'card',
             card

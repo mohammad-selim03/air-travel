@@ -1,7 +1,5 @@
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useContext, useEffect, useState } from 'react';
+import { CardElement } from '@stripe/react-stripe-js';
 import { useNavigate } from 'react-router-dom';
-import { context } from '../../AuthContext/AuthContext';
 import toast from 'react-hot-toast';
 
 

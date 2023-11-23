@@ -52,14 +52,6 @@ const Payment = ({booking}) => {
                         </button>
                     </div>
                 </form>
-                <p className="text-red-500">{cardError}</p>
-                {
-                    success && <div className='mt-9 text-center'>
-                        <p>Your transactionId: <span className='font-bold'>
-                            {transactionId}
-                        </span></p>
-                    </div>
-                }
             </div>
         </div>
     );

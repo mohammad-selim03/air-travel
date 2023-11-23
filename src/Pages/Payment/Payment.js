@@ -7,18 +7,7 @@ import toast from 'react-hot-toast';
 
 
 const Payment = ({booking}) => {
-    const { name, price, _id} = booking;
-    const {user} = useContext(context);
 
-
-    const [cardError, setCardError] = useState('');
-    const [success, setSuccess] = useState('');
-    const [processing, setProcessing] = useState(false);
-    const [transactionId, setTransactionId] = useState('');
-    const [clientSecret, setClientSecret] = useState("");
-
-    const stripe = useStripe();
-    const elements = useElements();
     const navigate = useNavigate();
 
     

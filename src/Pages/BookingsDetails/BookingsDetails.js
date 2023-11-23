@@ -1,4 +1,4 @@
-import React, { useContext,  useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaAvianex, FaCat, FaChild, FaMoneyBillAlt, FaPray, FaUserAlt, FaUserMd, FaUserTie, FaUsers, FaWineGlassAlt } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import { SlCup } from "react-icons/sl";
@@ -16,9 +16,9 @@ import Payment from '../Payment/Payment';
 const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLISHABLE_KEY}`);
 
 
-const BookingsDetails= () => {
+const BookingsDetails = () => {
     const booking = useLoaderData();
-    const { name, price, image, FlyingTime} = booking;
+    const { name, price, image, FlyingTime } = booking;
     const { user } = useContext(context);
     const [counter, setCounter] = useState(1);
 
@@ -47,8 +47,7 @@ const BookingsDetails= () => {
     const navigation = useNavigation();
 
 
-    if(navigation.state === 'loading')
-    {
+    if (navigation.state === 'loading') {
         return <p className='text-xl font-bold text-center'>Loading...</p>
     }
 
@@ -58,7 +57,7 @@ const BookingsDetails= () => {
             <div className='flex mx-auto'>
                 <img className='h-96 w-full' src={image} alt="" />
             </div>
-            <div className="grid grid-cols-2 mt-5 mb-5">
+            <div className="grid grid-cols-2 mt-12 mb-12">
                 <div>
                     <h2 className="text-2xl font-bold ml-5">Our Services</h2>
                     <ol className='font-semibold mt-9 space-y-2 text-xl'>
@@ -81,36 +80,37 @@ const BookingsDetails= () => {
                         <button className='ml-2'>{counter}</button>
                         <button onClick={increaseNumber} className='mx-3 bg-green-800 text-white w-12 h-10 rounded-2xl'>+</button></span> </h3>
                     <h3 className="text-xl font-semibold mb-5 flex items-center"><FaMoneyBillAlt className='mr-3 text-2xl text-blue-800' /> Price : ${totalPrice}</h3>
-                    <label disabled={totalPrice === 0} htmlFor="payment-modal" className="btn bg-gradient-to-r from-cyan-500 to-blue-800 border-blue-700 rounded font-bold text-white mt-3 mb-3">proceed to payment</label>
+                    <label disabled={totalPrice === 0} htmlFor="payment-modal" className="btn bg-gradient-to-r from-cyan-500 to-blue-800 border-blue-400  rounded font-bold text-white mt-3 mb-3">proceed to payment</label>
                 </div>
             </div>
 
 
             <input type="checkbox" id="payment-modal" className="modal-toggle" />
-            <div className="modal bg-gradient-to-t from-cyan-400 to-blue-800">
-                <div className="modal-box bg-gradient-to-t from-emerald-500 to-yellow-500 text-white">
+            <div className="modal w-full bg-gradient-to-t from-cyan-400 to-blue-800">
+                <div className="modal-box text-center mb-3 bg-gradient-to-t from-emerald-500 to-yellow-500 text-white">
                     <h3 className="font-bold text-xl text-center mb-5">Payment</h3>
                     <p className="font-semibold">Name : {user?.displayName}</p>
                     <p className="font-semibold">Destination : {name}</p>
                     <p className="font-semibold">Flying Time : {FlyingTime}</p>
                     <p className="font-semibold">Total Members: {counter}</p>
                     <p className="font-semibold">Total Price: ${totalPrice}</p>
+                    
+                    <h5 className="text-xl text-center mt-5">Please pay <b>${totalPrice}</b> for your Flight.</h5>
+                    <div className='w-56 mr-32'>
+                        <Elements stripe={stripePromise}>
+                            <Payment
+                                booking={booking}
+                            />
+                        </Elements>
+                    </div>
                     <div className="modal-action">
                         <label htmlFor="payment-modal" className="btn text-white bg-gradient-to-r from-cyan-400 to-blue-700">Close!</label>
                     </div>
                 </div>
 
-                <h2 className="text-3xl text-center font-bold mt-5 mb-8">Payment</h2>
-            <h5 className="text-xl text-center">Please pay <b>${price}</b> for your Flyte.</h5>
-            <div className='w-96 my-12'>
-                <Elements stripe={stripePromise}>
-                    <Payment
-                        booking={booking}
-                    />
-                </Elements>
-            </div>
 
-                
+
+
 
             </div>
         </div>

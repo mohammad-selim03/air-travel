@@ -4,8 +4,8 @@ import p2 from '../../assets/planes/pilot1.jpg'
 
 const About = () => {
     return (
-        <div className="hero  bg-base-200 mt-20 mb-56">
-            <div className="hero-content flex-col lg:flex-row">
+        <div className="hero bg-gradient-to-r from-lime-400  mt-20 mb-56 h-[500px]">
+            <div className="hero-content flex-col lg:flex-row mb-16">
                 <div className='relative'>
                     <img src={p1} className="max-w-sm rounded-lg shadow-2xl " alt='' />
                     <img src={p2} alt="" className='w-48 max-w-sm absolute rounded shadow-slate-800 top-32 left-24' />

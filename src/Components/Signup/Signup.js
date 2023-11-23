@@ -63,6 +63,7 @@ const Login = () => {
             console.log(user);
             toast.success('User Created Successful.!');
             navigate(from, {replace: true});
+            
 
             
             // update user name

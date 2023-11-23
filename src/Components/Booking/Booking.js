@@ -23,7 +23,8 @@ const Booking = ({ service }) => {
     }
 
     return (
-        <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-28'>
+        <div className='flex justify-center items-center'>
+            <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-20 justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="Shoes" className="rounded-xl" />
@@ -38,6 +39,7 @@ const Booking = ({ service }) => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

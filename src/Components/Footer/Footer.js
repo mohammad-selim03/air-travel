@@ -3,7 +3,7 @@ import logo from '../../assets/planes/aviation_logo-22.png'
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content">
+        <footer className="footer p-10 bg-neutral text-neutral-content flex justify-between items-center">
             <aside>
                 <img src={logo} className='w-28' alt="" />
                 <p><span className="text-2xl font-bold">AirTravel Ltd.</span><br />Providing the best comfortable journey since 1992</p>

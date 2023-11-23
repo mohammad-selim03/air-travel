@@ -1,6 +1,7 @@
 import React from 'react';
 import './BannerItem.css'
 import {  FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const BannerItem = ({ banner }) => {
     const { id, image, prev, next } = banner;
@@ -22,8 +23,8 @@ const BannerItem = ({ banner }) => {
             <p className='text text-white'>The best Air services Ranking No.1. We Believe in the best services and very much care about custumar comfort.</p>
         </div>
         <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 top-3/4">
-            <button className="btn bg-gradient-to-r from-cyan-500 to-blue-800 text-white btn-info rounded mr-5">Discover more</button>
-            <button className="btn btn-outline rounded btn-info w-36">Get started</button>
+            <Link to='/services'><button className="btn bg-gradient-to-r from-cyan-500 to-blue-800 text-white btn-info rounded mr-5">Discover more</button></Link>
+            <Link to='/services'><button className="btn btn-outline rounded btn-info w-36">Get started</button></Link>
         </div>
         <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0 slider-btn">
             <a href={`#slide${prev}`} className="btn bg-gradient-to-r from-cyan-400 to-blue-700 mr-5"><FaArrowLeft /></a>

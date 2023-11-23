@@ -2,7 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { context } from '../../AuthContext/AuthContext';
-
+import toast from 'react-hot-toast';
 
 
 
@@ -21,101 +21,23 @@ const Payment = ({booking}) => {
     const elements = useElements();
     const navigate = useNavigate();
 
-    useEffect(() => {
-        // Create PaymentIntent as soon as the page loads
-        fetch("https://localhost:5000/create-payment-intent", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(booking),
+    
 
-        })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result.clientSecret)
-                setClientSecret(result.clientSecret)
-            });
-    }, [booking]);
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        if (!stripe || !elements) {
-            return
-        }
-
-        const card = elements.getElement(CardElement);
-        if (card === null) {
-            return;
-        }
-
-        const { error } = await stripe.createPaymentMethod({
-            type: 'card',
-            card
-        });
-
-        if (error) {
-            console.log(error);
-            setCardError(error.message);
-        }
-        else {
-            setCardError('');
-        }
-        setSuccess('');
-        setProcessing(true);
-        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
-            clientSecret,
-            {
-                payment_method: {
-                    card: card,
-                    billing_details: {
-                        name: name,
-                        email: user?.email
-                    },
-                },
-            },
-        );
-
-        if (confirmError) {
-            setCardError(confirmError.message);
-            return;
-        }
-        if (paymentIntent.status === "succeeded") {
-            console.log('card info', card);
-            // store payment info in the database
-            const payment = {
-                price,
-                transactionId: paymentIntent.id,
-                bookingId: _id
-            }
-            fetch('https://localhost:5000/payments', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json',
-                },
-                body: JSON.stringify(payment)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.insertedId) {
-                        setSuccess();
-                        // toast.success('Congrats! your payment completed');
-                        setTransactionId(paymentIntent.id);
-                        navigate('/');
-                    }
-                })
-        }
+    const handlePay = () => {
+        toast.success("Payment Successfull.!");
+        toast('Thanks for choosing AirVel. Enjoy your air ride.')
+        
+        navigate('/');
     }
 
 
     return (
-        <div>
+        <div className='w-[430px] mx-auto'>
             {/* stripe codes */}
-            <div className='w-[500px]  bg-slate-200 p-10  rounded-xl lg:ml-60 ml-5 md:ml-40'>
-                <form onSubmit={handleSubmit} className='mx-auto'>
-                    <CardElement className='bg-sky-700 p-5 rounded-xl'
+            <div className='w-[400px] mt-5 ml-auto bg-slate-200 rounded-xl'>
+                <form className='mx-auto'>
+                    <CardElement required className='bg-sky-700 p-5 rounded-xl'
                         options={{
                             style: {
                                 base: {
@@ -135,9 +57,10 @@ const Payment = ({booking}) => {
                     />
                     <div className='flex justify-center items-center mt-5'>
                         <button
-                            className='btn mt-4 font-bold bg-green-700 text-white w-32 '
+                            className='btn mt-4 font-bold bg-green-700 border-green-400 text-white w-32 '
                             type="submit"
-                            disabled={!stripe || !clientSecret || processing}>
+                            onClick={handlePay}
+                            >
                             Pay
                         </button>
                     </div>

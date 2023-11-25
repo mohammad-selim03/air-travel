@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Booking from '../Booking/Booking';
+import services from './booking.json';
 
 const Services = () => {
-
-    const [services, setServices] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/bookings-info')
-            .then(res => res.json())
-            .then(data => {
-                setServices(data);
-            })
-    }, [])
 
     return (
         <div className="mt-20 text-center">
@@ -19,9 +10,8 @@ const Services = () => {
             <h1 className='text-6xl font-bold mb-6'>Our Services With Areas</h1>
             <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-16 justify-center items-center'>
             {
-                services && 
-                services.map(service => <Booking
-                    key={service._id}
+                services.map((service, i) => <Booking
+                    key={i}
                     service={service}
                 ></Booking>)
             }

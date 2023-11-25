@@ -1,10 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaAvianex, FaCat, FaChild, FaMoneyBillAlt, FaPray, FaUserAlt, FaUserMd, FaUserTie, FaUsers, FaWineGlassAlt } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
 import { SlCup } from "react-icons/sl";
 import { context } from '../../AuthContext/AuthContext';
-import { loadStripe } from '@stripe/stripe-js';
 import { useNavigation } from 'react-router-dom';
+import services from '../../Components/Services/booking.json'
 import { Elements } from '@stripe/react-stripe-js';
 import Payment from '../Payment/Payment';
 
@@ -13,15 +12,14 @@ import Payment from '../Payment/Payment';
 
 
 
-const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLISHABLE_KEY}`);
+
 
 
 const BookingsDetails = () => {
-    const booking = useLoaderData();
-    const { name, price, image, FlyingTime } = booking;
-    const { user } = useContext(context);
+    const { user, service } = useContext(context);
+    console.log(service);
+    const { name, price, image, FlyingTime } = service;
     const [counter, setCounter] = useState(1);
-
 
 
 
@@ -99,7 +97,7 @@ const BookingsDetails = () => {
                     <div className='w-56 mr-32'>
                         <Elements stripe={stripePromise}>
                             <Payment
-                                booking={booking}
+                                booking={service}
                             />
                         </Elements>
                     </div>

@@ -55,7 +55,7 @@ import BookingsDetails from '../../Pages/BookingsDetails/BookingsDetails';
                 {
                     path: '/bookings-details/:id',
                     element: <BookingsDetails></BookingsDetails>,
-                    loader:({params}) => fetch(`http://localhost:5000/bookings-details/${params.id}`)
+                    // loader:({params}) => fetch(`booking.json/bookings-details/${params.id}`)
                 },
 
             ]
@@ -67,7 +67,6 @@ import BookingsDetails from '../../Pages/BookingsDetails/BookingsDetails';
                 {
                     path: '/dashboard/userinfo',
                     element: <UserInfo></UserInfo>,
-                    // loader:({params}) => fetch(`http://localhost:5000/bookings-details/${params.id}`)
 
                 },
                 

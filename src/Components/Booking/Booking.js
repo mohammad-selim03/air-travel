@@ -2,23 +2,16 @@ import React, { useContext } from 'react';
 import { FaStar } from 'react-icons/fa';
 import {Link} from "react-router-dom";
 import { context } from '../../AuthContext/AuthContext';
+import BookingsDetails from '../../Pages/BookingsDetails/BookingsDetails';
+// import services from "../Services/booking.json"
 
 const Booking = ({ service }) => {
     const { name, price, FlyingTime, image, _id } = service;
-    const {user} = useContext(context);
+    const {user, setService} = useContext(context);
 
-    const getBookingId = (_id) => {
-        console.log(_id);
-        fetch(`http://localhost:5000/bookings-details/${_id}`, {
-            method: 'GET',
-            headers:{
-                
-            },
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+    const getBookingId = (service) => {
+        console.log(service);
+        setService(service);
         
     }
 
@@ -35,9 +28,10 @@ const Booking = ({ service }) => {
                     <h2 className="card-title font-bold">Flying Time : {FlyingTime}</h2>
                     <p className='font-bold text-orange-700'>Price : {price}</p>
                     <div className="card-actions">
-                        <Link to={user?.email ? `/bookings-details/${_id}` : '/login'}><button onClick={() => getBookingId(_id)} className="btn bg-gradient-to-r from-cyan-500 to-blue-900 text-white rounded-lg mx-5 w-52 font-bold">Booking</button></Link>
+                        <Link to={user?.email ? `/bookings-details/${_id}` : '/login'}><button onClick={() => getBookingId(service)} className="btn bg-gradient-to-r from-cyan-500 to-blue-900 text-white rounded-lg mx-5 w-52 font-bold">Booking</button></Link>
                     </div>
                 </div>
+                
             </div>
         </div>
         </div>

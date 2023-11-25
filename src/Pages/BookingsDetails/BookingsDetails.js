@@ -6,11 +6,12 @@ import { useNavigation } from 'react-router-dom';
 import services from '../../Components/Services/booking.json'
 import { Elements } from '@stripe/react-stripe-js';
 import Payment from '../Payment/Payment';
+import { loadStripe } from '@stripe/stripe-js';
 
 
 
 
-
+const stripePromise = loadStripe(`${process.env.REACT_APP_PUBLISHABLE_KEY}`);
 
 
 

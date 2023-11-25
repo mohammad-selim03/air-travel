@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Booking from '../Booking/Booking';
 import services from './booking.json';
+import { context } from '../../AuthContext/AuthContext';
 
 const Services = () => {
+
+    const {loader} = useContext(context);
+
+    if(loader){
+        return <p className='text-center '><span className="loading loading-dots loading-lg"></span></p>
+    }
 
     return (
         <div className="mt-20 text-center">

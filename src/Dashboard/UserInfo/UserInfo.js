@@ -13,15 +13,21 @@ const UserInfo = () => {
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Favorite Color</th>
+                        <th>Payment</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr className="bg-base-200">
                         <th>{user?.displayName}</th>
                         <td>{user?.email}</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Blue</td>
+                        <td className='font-bold text-green-700'>Done</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr className="bg-base-200">
+                        <th>{user?.displayName}</th>
+                        <td>{user?.email}</td>
+                        <td className='font-bold text-green-700'>Done</td>
                     </tr>
                 </tbody>
             </table>
